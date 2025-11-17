@@ -1,0 +1,815 @@
+* {
+  font-family: Basis Grotesque Pro, sans-serif;
+  font-family: "jubilat", serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --main-color: #ffffff;
+  --color: #e24d34;
+  --colorSection: rgb(38,36,34);
+  --bg-sec: #eee2d0;
+}
+
+a {
+  text-decoration: none;
+}
+img {
+  width: 100%;
+}
+ul {
+  list-style: none;
+  margin: 0;
+}
+/*start header */
+nav {
+ 
+   position: fixed;
+   width: 100%;
+   z-index: 1000;
+   padding: 1.5rem 1.25rem 1.25rem;
+   transition: background 0.3s;
+   -webkit-transition: background 0.3s;
+   -moz-transition: background 0.3s;
+   -ms-transition: background 0.3s;
+   -o-transition: background 0.3s;
+}
+nav.dark {
+    color: var(--colorSection);
+}
+
+nav.dark a  {
+    color: var(--colorSection);
+   
+}
+nav.dark a:hover{
+     color: var(--colorSection);
+    
+}
+.nav-items {
+  justify-content: space-between;
+}
+
+nav a {
+  color: var(--main-color);
+  font-family: "jubilat", serif;
+  transition: all 0.3s ease;
+   cursor: pointer;
+   font-weight: bold;
+  letter-spacing: 0px;
+  text-decoration: none;
+  font-size: 20px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  text-align: center;
+}
+.list-nav a,
+.logo-text,
+.logo-subtitle {
+  opacity: 0;
+  animation: fadeInLinks 1s ease forwards;
+  -webkit-animation: fadeInLinks 1s ease forwards;
+}
+
+.list-nav ul li:nth-child(1) a {
+   animation-delay: .6s; }
+.list-nav ul li:nth-child(2) a {
+   animation-delay: .75s; }
+
+.logo-text { animation-delay: .9s; }
+.logo-subtitle { animation-delay: 1.05s; }
+
+.list-nav:last-child ul li:nth-child(1) a
+ { animation-delay: 1.2s; }
+.list-nav:last-child ul li:nth-child(2) a { 
+  animation-delay: 1.35s; }
+
+@keyframes fadeInLinks {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+    -webkit-transform: translateY(6px);
+    -moz-transform: translateY(6px);
+    -ms-transform: translateY(6px);
+    -o-transform: translateY(6px);
+}
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.list-nav a {
+  position: relative;
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+}
+
+
+.list-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background-size: cover;
+  background-image: url(../images/label-bg02.webp);
+  transition: 0.35s ease;
+  -webkit-transition: 0.35s ease;
+  -moz-transition: 0.35s ease;
+  -ms-transition: 0.35s ease;
+  -o-transition: 0.35s ease;
+}
+
+.list-nav a:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+  -webkit-transform: translateY(-3px);
+  -moz-transform: translateY(-3px);
+  -ms-transform: translateY(-3px);
+  -o-transform: translateY(-3px);
+}
+
+.list-nav a:hover::after {
+  width: 100%;
+}
+
+.list-nav a:hover {
+  color: var(--main-color);
+}
+.site-logo a {
+    cursor: pointer;
+  color: var(--main-color);
+  font-size: 40px;
+  line-height: 30px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-family: "jubilat", serif;
+  display: inline-block;
+  text-align: center;
+}
+.site-logo a:hover {
+  color: var(--main-color);
+}
+.site-logo span {
+  color: var(--main-color);
+  margin: 0;
+  font-size: 13px;
+  letter-spacing: 6px;
+}
+/* toggle */
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  color: #fff;
+  
+  
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -260px;
+  width: 260px;
+  height: 100%;
+  background: #111;
+  padding: 30px 20px;
+  transition: 0.4s ease !important;
+  z-index: 999;
+  -webkit-transition: 0.4s ease !important;
+  -moz-transition: 0.4s ease !important;
+  -ms-transition: 0.4s ease !important;
+  -o-transition: 0.4s ease !important;
+}
+
+.mobile-menu.open {
+  left: 0;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+}
+
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.mobile-menu ul li {
+  margin: 20px 0;
+}
+
+.mobile-menu ul li a {
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.mobile-menu ul li a:hover {
+  color: #ee2d0e;
+}
+/* end header */
+/* start home */
+.carousel {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+.carousel .list .item {
+  width: 180px;
+  height: 250px;
+  top: 80%;
+  left: 60%;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+  background-position: center center;
+  background-size: cover;
+  transform: translateY(-70%);
+  position: absolute;
+  transition: 1s;
+  z-index: 100;
+  -webkit-transform: translateY(-70%);
+  -moz-transform: translateY(-70%);
+  -ms-transform: translateY(-70%);
+  -o-transform: translateY(-70%);
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+.carousel .list .item:nth-child(1),
+.carousel .list .item:nth-child(2) {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translate(0, 0);
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+}
+/* end home */
+
+.carousel .list .item:nth-child(3) {
+  left: 62%;
+}
+.carousel .list .item:nth-child(4) {
+  left: calc(62% + 200px);
+}
+.carousel .list .item:nth-child(5) {
+  left: calc(62% + 400px);
+}
+.carousel .list .item:nth-child(6) {
+  left: calc(62% + 600px);
+}
+.carousel .list .item:nth-child(n + 7) {
+  left: calc(62% + 800px);
+  opacity: 0;
+}
+.carousel .list .item .content {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  width: 400px;
+  color: var(--main-color);
+  text-align: left;
+  display: none;
+}
+.carousel .list .item:nth-child(2) .content {
+  display: block;
+}
+.item .content .title,
+.item .content .des {
+  opacity: 0;
+  font-size: 80px;
+  text-transform: uppercase;
+  line-height: 1;
+  text-shadow: 3px 4px 4px rgba(255, 225, 255, 0.8);
+  margin-bottom: 30px;
+}
+.item .content .title {
+  animation: animate 1s ease-in-out 0.3s 1 forwards;
+  -webkit-animation: animate 1s ease-in-out 0.3s 1 forwards;
+}
+.item .content .des {
+  animation: animate 1s ease-in-out 0.6s 1 forwards;
+  -webkit-animation: animate 1s ease-in-out 0.6s 1 forwards;
+}
+.unline {
+  font-style: italic;
+  position: relative;
+  font-family: "Jubilat", serif;
+  opacity: 0;
+  animation: animate 1s ease-in-out 0.6s 1 forwards;
+  position: relative;
+  -webkit-animation: animate 1s ease-in-out 0.6s 1 forwards;
+}
+.unline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -13px;
+  width: 100%;
+  height: 14px;
+  background-image: url(../images/brush01.webp);
+  background-repeat: no-repeat;
+  background-size: contain;
+  animation: animate 1s ease-in-out 0.6s 1 forwards;
+  -webkit-animation: animate 1s ease-in-out 0.6s 1 forwards;
+}
+
+@keyframes animate {
+  from {
+    opacity: 0;
+    transform: translate(0, 100px);
+    filter: blur(33px);
+    -webkit-transform: translate(0, 100px);
+    -moz-transform: translate(0, 100px);
+    -ms-transform: translate(0, 100px);
+    -o-transform: translate(0, 100px);
+    -webkit-filter: blur(33px);
+}
+  to {
+    opacity: 1;
+    transform: translate(0);
+    filter: blur(0);
+    -webkit-filter: blur(0);
+    -webkit-transform: translate(0);
+    -moz-transform: translate(0);
+    -ms-transform: translate(0);
+    -o-transform: translate(0);
+}
+}
+
+.arrows {
+  position: absolute;
+  top: 90%;
+  right: 30%;
+  z-index: 100;
+  width: 38800px;
+  max-width: 30%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.arrows button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px #ffffff dotted;
+  outline: none;
+  font-weight: bold;
+  font-size: 16px;
+  color: var(--color);
+  transition: 0.5s;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.arrows button:hover {
+  background-color: #e24d34;
+  border: none;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 850px) {
+  .item .content {
+    top: 50% !important;
+    right: 20% !important;
+  }
+  .item .content .title {
+    font-size: 45px !important;
+  }
+  .item .content .des {
+    font-size: 45px !important;
+  }
+}
+@media screen and (max-width: 530px) {
+  .item .content {
+    top: 50% !important;
+    right: -10% !important;
+  }
+  .item .content .title {
+    font-size: 35px !important;
+  }
+  .item .content .des {
+    font-size: 35px !important;
+  }
+  .carousel .list .item {
+    width: 130px;
+    height: 200px;
+    left: 5%;
+  }
+}
+@media screen and (max-width: 380px) {
+.item .content {
+    top: 50% !important;
+    right: -30% !important;
+    
+  }
+  
+}
+.page {
+  display: none;
+  min-height: 100vh;
+}
+
+.page.active {
+  display: block;
+}
+
+ 
+
+
+#coursesPage{
+        background-color: var(--bg-sec);
+       
+}
+#coursesPage .curses .title-curses{
+  position: fixed !important;
+
+   font-weight: 600;
+   font-size: 90px;
+   line-height: 101px;
+   color: #000;
+   font-family: "jubilat", serif;
+   top:25%;
+   left: 30px !important;
+   opacity: 0;
+   animation: animate 1s ease-in-out 0.1s 1 forwards;
+   -webkit-animation: animate 1s ease-in-out 0.1s 1 forwards;
+}
+#coursesPage .curses .title-curses span{
+      -webkit-text-stroke: 1px #262422;
+      color: transparent;
+      opacity: 0;
+      animation: animate 1s ease-in-out 0.6s 1 forwards;
+      -webkit-animation: animate 1s ease-in-out 0.6s 1 forwards;
+      position: relative;
+      transition: 1s all;
+      -webkit-transition: 1s all;
+      -moz-transition: 1s all;
+      -ms-transition: 1s all;
+      -o-transition: 1s all;
+      animation: animateunderline 1s ease-in-out 1s 1 forwards;
+}
+/* خط بسيط يظهر من النص */
+#coursesPage .curses .title-curses span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background-size: cover;
+  background-image: url(../images/label-bg02.webp);
+  transition: 0.35s ease;
+  -webkit-transition: 0.35s ease;
+  -moz-transition: 0.35s ease;
+  -ms-transition: 0.35s ease;
+  -o-transition: 0.35s ease;
+}
+
+
+
+
+@keyframes animateunderline {
+  from {
+    opacity: 0;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+}
+  to {
+     opacity: 1;
+     transform: translateX(-3px);
+     -webkit-transform: translateX(-3px);
+     -moz-transform: translateX(-3px);
+     -ms-transform: translateX(-3px);
+     -o-transform: translateX(-3px);
+}
+}
+/* pages system fix */
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block !important; 
+}
+
+
+
+
+
+#courseDetailsPage{
+  background-color: var(--bg-sec);
+
+}
+#courseDetailsPage button i{
+  color: var(--color);
+  font-weight: bold;
+  font-size: 25px;
+}
+#videosContainer{
+  display: flex;
+  gap: 20px;
+  animation: animate 1s ease-in-out 0.6s 1 forwards;
+  -webkit-animation: animate 1s ease-in-out 0.6s 1 forwards;
+  opacity: 0;
+  justify-content: center;
+}
+#detailsTitle{
+       -webkit-text-stroke: 1px #262422;
+       color: transparent;
+       position: relative;
+       transition: 1s all;
+       -webkit-transition: 1s all;
+       -moz-transition: 1s all;
+       -ms-transition: 1s all;
+       -o-transition: 1s all;
+       opacity: 0;
+       animation: animate 1s ease-in-out 0.3s 1 forwards;
+       font-size: 60px;
+       line-height: 101px;
+       -webkit-animation: animate 1s ease-in-out 0.3s 1 forwards;
+}
+.videoBox h4{
+font-family: "jubilat", serif;
+text-align: center;
+font-weight: 700;
+margin-top: 5px;
+}
+.content-details{
+  transform: translateY(23%);
+  -webkit-transform: translateY(23%);
+  -moz-transform: translateY(23%);
+  -ms-transform: translateY(23%);
+  -o-transform: translateY(23%);
+}
+
+/* end coursesPage */
+
+
+#coursesPage {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden !important;
+  padding: 0;
+  margin: 0;
+  background-color: var(--bg-sec);
+}
+.card-info h3{
+font-weight: bold;
+}
+#coursesPage .curses .title-curses {
+  position: fixed !important;
+  top: 20% !important;
+  left: 41% !important;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 101px;
+  color: #000;
+  font-family: "jubilat", serif;
+  opacity: 0;
+  animation: animate 1s ease-in-out 0.1s 1 forwards;
+  -webkit-animation: animate 1s ease-in-out 0.1s 1 forwards;
+}
+
+
+@keyframes underlineGrow {
+  from {
+    width: 0%;
+    opacity: 0;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+
+#coursesPage .curses .title-curses span {
+  -webkit-text-stroke: 1px #262422;
+  color: transparent;
+  opacity: 0;
+  animation: animate 1s ease-in-out 0.6s 1 forwards;
+  position: relative;
+  transition: 1s all;
+  -webkit-animation: animate 1s ease-in-out 0.6s 1 forwards;
+  -webkit-transition: 1s all;
+  -moz-transition: 1s all;
+  -ms-transition: 1s all;
+  -o-transition: 1s all;
+}
+
+
+#coursesPage .curses .title-curses span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background-position: center center;
+  background-image: url(../images/label-bg02.webp);
+  background-size: cover;
+  animation: underlineGrow 0.8s ease 1.1s forwards;
+  opacity: 0;
+  -webkit-animation: underlineGrow 0.8s ease 1.1s forwards;
+}
+
+.page {
+  display: none;
+}
+.page.active {
+  display: block !important;
+}
+
+
+
+.coursesContainer {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 260px;
+  gap: 20px;
+  width: 100%;
+  padding: 10px 0;
+  height: auto !important;
+  transform: none !important;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  -webkit-transform: none !important;
+  -moz-transform: none !important;
+  -ms-transform: none !important;
+  -o-transform: none !important;
+}
+
+
+.coursesContainer::-webkit-scrollbar {
+  height: 10px;
+}
+
+.coursesContainer::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+
+}
+
+
+
+.card {
+  font-family: "jubilat", serif;
+  width: 260px;
+  height: fit-content !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  cursor: pointer;
+  opacity: 0;
+  animation: animate 1s ease-in-out 2s 1 forwards;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.4s ease;
+  border-radius: 20px;
+  -webkit-transition: transform 0.4s ease;
+  -moz-transition: transform 0.4s ease;
+  -ms-transition: transform 0.4s ease;
+  -o-transition: transform 0.4s ease;
+  -webkit-animation: animate 1s ease-in-out 2s 1 forwards;
+}
+
+.card img {
+  object-fit: cover;
+  width: 100%;
+  height: 150px;
+  border-radius: 20px;
+  transition: transform 0.4s ease;
+  -webkit-transition: transform 0.4s ease;
+  -moz-transition: transform 0.4s ease;
+  -ms-transition: transform 0.4s ease;
+  -o-transition: transform 0.4s ease;
+
+}
+
+
+.card::after {
+  content: "";
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  width: 0;
+  height: 0;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 60%);
+  border-radius: 50%;
+  pointer-events: none;
+  transition: width 0.4s ease, height 0.4s ease;
+  -webkit-transition: width 0.4s ease, height 0.4s ease;
+  -moz-transition: width 0.4s ease, height 0.4s ease;
+  -ms-transition: width 0.4s ease, height 0.4s ease;
+  -o-transition: width 0.4s ease, height 0.4s ease;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+.card:hover::after {
+  width: 200px;
+  height: 200px;
+}
+
+
+.curses {
+  height: auto !important; 
+  margin: 0 !important;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.coursesContainer{
+  transform:translateY(120%) !important;
+  transform: translateX(2%);
+  -webkit-transform:translateY(120%) !important;
+  -moz-transform:translateY(120%) !important;
+  -ms-transform:translateY(120%) !important;
+  -o-transform:translateY(120%) !important;
+}
+.content-details h2:hover{
+color: var(--color);
+}
+@media screen and (max-width: 850px) {
+ .title-curses{
+  font-size: 50px;
+ }
+}
+@media screen and (max-width: 600px) {
+#coursesPage .curses .title-curses {
+  position: fixed !important;
+  top: 20% !important;
+  left: 35% !important;
+  font-size: 30px !important;
+ }
+}
+
+@media (max-width: 768px) {
+  .list-nav {
+    display: none !important;
+  }
+  nav{
+     display: flex;
+  justify-content: space-between;
+  }
+ 
+
+  .menu-toggle {
+    display: block;
+  }
+}
